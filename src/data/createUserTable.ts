@@ -6,7 +6,8 @@ const createUserTable: () => void = async () => {
       id SERIAL PRIMARY KEY ,
       name VARCHAR(100) NOT NULL,
       email VARCHAR(100) NOT NULL,
-      created_at TIMESTAMP DEFAULT NOW()
+      password VARCHAR(255) NOT NULL DEFAULT '',
+      created_at BIGINT DEFAULT EXTRACT(EPOCH FROM NOW())
     )
   `;
   try {

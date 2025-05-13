@@ -1,4 +1,10 @@
 GET http://localhost:5001/api/user
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwibmFtZSI6IlRlc3QgbmFtZSIsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsImNyZWF0ZWRfYXQiOiIxNzQ3MDI4OTgzIiwiaWF0IjoxNzQ3MTIyMTEwLCJleHAiOjE3NDcxMjkzMTB9.bkG-uU7JJDSLNm1bEIRCc_ghq4z97NRhHq7fDtDc6Vs
+
+###
+
+DELETE http://localhost:5001/api/user/3
 
 ###
 
@@ -7,5 +13,29 @@ Content-Type: application/json
 
 {
   "name": "Test name",
-  "email": "test@test.com"
+  "email": "test@test.com",
+  "password": "12345"
 }
+
+###
+
+POST http://localhost:5001/api/login
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "12345"
+}
+
+###
+
+POST http://localhost:5001/api/refresh
+Content-Type: application/json
+
+{
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwibmFtZSI6IlRlc3QgbmFtZSIsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsImNyZWF0ZWRfYXQiOiIxNzQ3MDI4OTgzIiwiaWF0IjoxNzQ3MTE1ODMxLCJleHAiOjE3NDcxMTU4OTF9.valcyVTVP5kAKU61O7FutmZ0yEYaa5PNe26jUbxtD4I"
+}
+
+###
+
+DELETE http://localhost:5001/api/logout

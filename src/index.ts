@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import pool from "./config/db";
 import userRoutes from "./routes/userRoutes";
+import authRoutes from "./routes/authRoutes";
 import createUserTable from "./data/createUserTable";
 import { errorHandler } from "./middlewares/errorHandler";
 
@@ -16,6 +17,7 @@ app.use(cors());
 
 //Routes
 app.use("/api", userRoutes);
+app.use("/api", authRoutes);
 
 //Error handling middleware
 app.use(errorHandler);
